@@ -15,8 +15,7 @@ class Solution {
                     break;
                 }
             }i++;
-
-            if(rot) return true;
+        if(rot) return true;
         }return false;
     }
 }
