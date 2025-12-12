@@ -1,7 +1,7 @@
 class Solution {
     public int coinChange(int[] coins, int amount) {
         if(amount == 0) return 0;
-        if(amount==coins[0]) return 1;
+        //if(amount==coins[0]) return 1;
         int n=coins.length;
         int a = amount+1;
         int[][] dp = new int[n+1][amount+1];
