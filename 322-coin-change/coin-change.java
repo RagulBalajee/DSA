@@ -16,12 +16,13 @@ class Solution {
         
         for(int i=1;i<=coins.length;i++){
             for(int j=1;j<=amount;j++){
-                if(j>=coins[i-1]) 
-                dp[i][j]= Math.min(dp[i-1][j],1+dp[i][j-coins[i-1]]);
-                else 
-                dp[i][j]= dp[i-1][j];
+                if(coins[i-1]>j){
+                    dp[i][j] = dp[i-1][j];
+                }else{
+                    dp[i][j] = Math.min(dp[i-1][j],dp[i][j-coins[i-1]] + 1);
+                }
             }
-        }
-        return dp[coins.length][amount] == amount+1 ? -1 : dp[coins.length][amount];
+        }if(dp[coins.length][amount] > amount) return -1;
+        return dp[coins.length][amount];
     }
 }
