@@ -1,7 +1,7 @@
 class Solution {
     public int findJudge(int n, int[][] trust) {
         //if(n==2 && trust.length == 1) return trust[0][1];
-        if(n==1 && trust.length == 0) return 1; 
+        if(n==1) return 1; 
         if(n==trust.length) return -1;
         int[] in = new int[n+1];
         int[] out = new int[n+1];
